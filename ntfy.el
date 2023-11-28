@@ -59,7 +59,7 @@ Custom HEADER and TAGS are set for the notification."
   "Publish message to server with curl with MESSAGE.
 Configured HEADER and TAGS are used unless specified."
   (start-process "nfty.el" nil "curl"
-		 "-H" (format "Title: %s" (or header ntfy-header))
+		 "-H" (format "%s" (or header ntfy-header))
 		 "-H" (format "Tags: %s" (or tags ntfy-tags))
 		 "-d" (format "%s" message)
 		 (format "%s/%s" ntfy-server ntfy-topic)))
